@@ -26,10 +26,10 @@ dfB.head()
 dfW = pd.read_excel('White Cards.xlsx', sheet_name='Sheet1')
 
 
-# In[100]:
+# In[101]:
 
 
-#dfB.sample(n=None, frac=None, replace=False, weights=None, random_state=None, axis=None)
+dfB.sample(n=None, frac=None, replace=False, weights=None, random_state=None, axis=None)
 
 
 # In[98]:
@@ -38,16 +38,28 @@ dfW = pd.read_excel('White Cards.xlsx', sheet_name='Sheet1')
 #dfW.head()
 
 
-# In[36]:
+# In[102]:
 
 
-#sCardB = dfB.sample(n=None, frac=None, replace=False, weights=None, random_state=None, axis=None)
+sCardB = dfB.sample(n=None, frac=None, replace=False, weights=None, random_state=None, axis=None)
+
+
+# In[111]:
+
+
+sCardB.tail()
 
 
 # In[37]:
 
 
 #CardB = sCardB.drop('Card Color', 1)
+
+
+# In[115]:
+
+
+sCardB.iloc[0]['Content']
 
 
 # In[38]:
