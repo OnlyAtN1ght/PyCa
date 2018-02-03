@@ -1,5 +1,37 @@
 {% extends 'layout.html' %}
 
 {% block body %}
-	Home
+<p>
+    <a href="{{ url_for('generate_bc') }}">Draw a random black card</a>
+</p>
+<p>
+    <a href="{{ url_for('see_black_card') }}">See the random black card</a>
+</p>
+<p>{{blackcard2}}</p>
+
+<a href="{{ url_for('draw_white_card') }}">Draw 10 white cards</a>
+<p>
+    {% for white_card in all_white_cards %}
+      <a href="{{ url_for('choose_white_card',card=white_card) }}">{{ white_card }}</a>
+    {% endfor %}
+</p>
+<p>
+    <a href="{{url_for('show_white_cards')}}">Show whites</a>
+    <p>{{white_card_disp}}</p>
+</p>
+<p>
+    <a href="{{url_for('display_sentence')}}">Make sentence</a>
+    <p>
+        {% for sentence in sentences %}
+        <p>{{sentence}}</p>
+        {% endfor %}
+    </p>
+</p>
+<p>
+    <a href="{{url_for('reset')}}">Reset</a>
+</p>
+
 {% endblock %}
+
+
+<!--href="{{ url_for('choose_white_card',card=white_card) }}"-->
